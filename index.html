@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minesweeper</title>
+  <link rel="stylesheet" href="styles/minesweeper.css" />
+</head>
+<body>
+  <div id="app" class="app-container">
+    <div class="game-container">
+      <!-- Game Info Header -->
+      <div class="game-header">
+        <div class="info-display">
+          <div class="info-left">
+            <div class="counter-container">
+              <span class="label">Mines:</span>
+              <div class="display" id="counter">010</div>
+            </div>
+          </div>
+          <button id="status" class="smiley-btn">😊</button>
+          <div class="info-right">
+            <div class="timer-container">
+              <span class="label">Time:</span>
+              <div class="display" id="timer">000</div>
+            </div>
+            <button id="undo-btn-header" class="undo-btn-header" disabled>⎌</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message Display -->
+      <div id="message" class="message">
+        <span class="hint mobile-hint">📱 Tap to reveal | Long press to flag | Double tap to chord</span>
+        <span class="hint desktop-hint">🖱️ Click to reveal | Right-click to flag | Double-click to chord</span>
+        <span id="message-alert" class="alert-text"></span>
+        <button id="restart-btn" class="message-btn" type="button">Restart</button>
+      </div>
+
+      <!-- Game Board Container -->
+      <div id="board-container" class="board-container">
+        <div id="board-container-inner" class="board-container-inner">
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls">
+        <div class="controls-row">
+          <div class="difficulty-buttons">
+            <button id="difficulty-easy" class="difficulty-btn active">Easy (9x9)</button>
+            <button id="difficulty-medium" class="difficulty-btn">Medium (16x16)</button>
+            <button id="difficulty-custom" class="difficulty-btn">Custom</button>
+          </div>
+          <label class="learning-mode-label">
+            <input type="checkbox" id="learning-mode-toggle" />
+            <span>Learn</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats">
+        <h3>High Scores</h3>
+        <div id="high-scores" class="high-scores">
+          <div id="scores-easy" class="score-section">
+            <h4>Easy</h4>
+            <ol id="easy-scores" class="score-list"></ol>
+          </div>
+          <div id="scores-medium" class="score-section">
+            <h4>Medium</h4>
+            <ol id="medium-scores" class="score-list"></ol>
+          </div>
+          <div id="scores-custom" class="score-section">
+            <h4>Custom</h4>
+            <ol id="custom-scores" class="score-list"></ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="custom-modal" class="modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="custom-title">
+        <h2 id="custom-title">Custom Game</h2>
+        <div class="modal-body">
+          <label for="custom-rows">Rows</label>
+          <input id="custom-rows" type="number" min="5" max="30" />
+
+          <label for="custom-cols">Cols</label>
+          <input id="custom-cols" type="number" min="5" max="30" />
+
+          <label for="custom-mines">Mines</label>
+          <input id="custom-mines" type="number" min="1" />
+
+          <div id="custom-error" class="modal-error"></div>
+        </div>
+        <div class="modal-actions">
+          <button id="custom-cancel" class="action-btn" type="button">Cancel</button>
+          <button id="custom-start" class="action-btn" type="button">Start</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="index.ts"></script>
+</body>
+</html>
