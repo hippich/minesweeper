@@ -11,11 +11,13 @@
     "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "vitest run",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
+    "vitest": "^1.6.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.0"
   }
