@@ -58,7 +58,7 @@ export class LocalStorageManager {
       soundEnabled: false,
       theme: 'classic',
       customConfig: {
-        rows: 30,
+        rows: 16,
         cols: 16,
         mines: 99
       },

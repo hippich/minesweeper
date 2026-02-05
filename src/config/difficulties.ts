@@ -15,7 +15,7 @@ export const DIFFICULTIES: DifficultyMap = {
     mines: 40
   },
   custom: {
-    rows: 30,
+    rows: 16,
     cols: 16,
     mines: 99
   }
