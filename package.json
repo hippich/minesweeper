@@ -2,6 +2,7 @@
   "name": "minesweeper",
   "version": "1.0.0",
   "description": "Classic client-side Minesweeper game with full undo and learning mode support",
+  "homepage": "https://hippich.github.io/minesweeper/",
   "license": "ISC",
   "author": "",
   "type": "module",
@@ -9,9 +10,12 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.0"
   }
