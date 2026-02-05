@@ -520,9 +520,8 @@ h1 {
 
 .difficulty-btn,
 .action-btn {
-  padding: 6px 10px;
   font-size: 10px;
-  font-weight: bold;
+  font-weight: normal;
   border: var(--border-width-thin) solid;
   border-color: var(--bg-shadow-light) var(--bg-shadow-dark) var(--bg-shadow-dark) var(--bg-shadow-light);
   background: linear-gradient(135deg, var(--bg-shadow-light) 0%, var(--bg-color) 100%);
@@ -633,7 +632,7 @@ h1 {
 
   .high-scores { grid-template-columns: repeat(3, 1fr); }
   .difficulty-buttons { gap: 8px; }
-  .difficulty-btn { min-width: 120px; padding: 8px 12px; }
+  .difficulty-btn { min-width: 120px; }
   .action-btn { padding: 8px 12px; min-height: 36px; }
   .undo-btn { min-width: 80px; }
 }
@@ -655,7 +654,6 @@ h1 {
   .stats { padding: 12px; }
   .controls { padding: 10px; }
   .controls-row { gap: 10px; }
-  .difficulty-btn, .action-btn { padding: 10px 14px; font-size: 11px; }
 }
 
 /* Large Desktop: 1440px and up */
@@ -673,5 +671,4 @@ h1 {
   .display { font-size: 24px; height: 28px; line-height: 24px; max-width: 80px; }
   .smiley-btn { width: 44px; height: 44px; min-width: 44px; min-height: 44px; font-size: 48px; }
   h1 { font-size: 24px; }
-  .difficulty-btn, .action-btn { padding: 10px 16px; font-size: 12px; }
 }
