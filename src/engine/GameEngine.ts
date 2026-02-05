@@ -224,6 +224,10 @@ export class GameEngine {
     this.gameState = JSON.parse(JSON.stringify(state));
     this.board = new MinesweeperBoard(state.board.rows, state.board.cols, state.board.mines);
     this.board['board'] = JSON.parse(JSON.stringify(state.board));
+    this.stopTimer();
+    if (this.gameState.status === 'playing' && this.gameState.board.minesGenerated) {
+      this.startTimer();
+    }
     this.emit('state-restored', {});
   }
 
