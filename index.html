@@ -3,9 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Classic client-side Minesweeper game with full undo and learning mode support" />
+  <meta name="theme-color" content="#217ac0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Minesweeper" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><style>.cell{fill:%23c0c0c0;stroke:%23666;stroke-width:1}.cell-r{fill:%23d0d0d0}.n{font-family:Arial;font-weight:bold;font-size:14px;text-anchor:middle;dominant-baseline:central}.n1{fill:%230000cc}.n2{fill:%23008000}.emoji{font-size:16px;text-anchor:middle;dominant-baseline:central}</style></defs><rect fill='%23a0a0a0' width='100' height='100'/><rect class='cell cell-r' x='10' y='10' width='22' height='22'/><text class='n n2' x='21' y='21'>2</text><rect class='cell cell-r' x='38' y='10' width='22' height='22'/><text class='n n1' x='49' y='21'>1</text><rect class='cell' x='66' y='10' width='22' height='22'/><rect class='cell cell-r' x='10' y='38' width='22' height='22'/><rect class='cell cell-r' x='38' y='38' width='22' height='22'/><text class='emoji' x='49' y='49'>💣</text><rect class='cell' x='66' y='38' width='22' height='22'/><text class='emoji' x='77' y='49'>🚩</text><rect class='cell' x='10' y='66' width='22' height='22'/><rect class='cell' x='38' y='66' width='22' height='22'/><rect class='cell' x='66' y='66' width='22' height='22'/></svg>" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><defs><style>.cell{fill:%23c0c0c0;stroke:%23888;stroke-width:1.5}.cell-r{fill:%23d0d0d0}.n{font-family:Arial;font-weight:bold;font-size:24px;text-anchor:middle;dominant-baseline:central}.n1{fill:%230000cc}.n2{fill:%23008000}.emoji{font-size:32px;text-anchor:middle;dominant-baseline:central}</style></defs><rect fill='%23b0b0b0' width='180' height='180' rx='40'/><rect class='cell cell-r' x='18' y='18' width='42' height='42'/><text class='n n2' x='39' y='39'>2</text><rect class='cell cell-r' x='66' y='18' width='42' height='42'/><text class='n n1' x='87' y='39'>1</text><rect class='cell' x='114' y='18' width='42' height='42'/><rect class='cell cell-r' x='18' y='66' width='42' height='42'/><rect class='cell cell-r' x='66' y='66' width='42' height='42'/><text class='emoji' x='87' y='87'>💣</text><rect class='cell' x='114' y='66' width='42' height='42'/><text class='emoji' x='135' y='87'>🚩</text><rect class='cell' x='18' y='114' width='42' height='42'/><rect class='cell' x='66' y='114' width='42' height='42'/><rect class='cell' x='114' y='114' width='42' height='42'/></svg>" />
   <title>Minesweeper</title>
-  <script type="module" crossorigin src="/minesweeper/assets/index-CYRZBg8Q.js"></script>
-  <link rel="stylesheet" crossorigin href="/minesweeper/assets/index-Bz5dE1sb.css">
+  <script type="module" crossorigin src="/minesweeper/assets/index-B1nV1UfB.js"></script>
+  <link rel="stylesheet" crossorigin href="/minesweeper/assets/index-DVIXd7zL.css">
 </head>
 <body>
   <div id="app" class="app-container">
@@ -102,5 +110,20 @@
     </div>
   </div>
 
+  <script>
+    // Register service worker for PWA functionality
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js').then(
+          (registration) => {
+            console.log('Service Worker registered:', registration);
+          },
+          (error) => {
+            console.log('Service Worker registration failed:', error);
+          }
+        );
+      });
+    }
+  </script>
 </body>
 </html>
